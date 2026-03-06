@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Translation Agent</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <span class="popup-icon">🌐</span>
+      <h1>Translation Agent</h1>
+    </header>
+
+    <div id="status-section" class="status-section">
+      <div id="status-indicator" class="status-indicator status--idle">
+        <span class="status-dot"></span>
+        <span id="status-text">Idle</span>
+      </div>
+    </div>
+
+    <div id="email-section" class="input-section">
+      <label for="email-input">Email for summary:</label>
+      <input type="email" id="email-input" placeholder="you@example.com" />
+    </div>
+
+    <div class="button-section">
+      <button id="btn-start" class="btn btn--start">
+        <span class="btn-icon">▶</span> Start Listening
+      </button>
+      <button id="btn-stop" class="btn btn--stop" disabled>
+        <span class="btn-icon">⏹</span> Stop & Summarize
+      </button>
+    </div>
+
+    <div id="chunk-count" class="chunk-info" style="display:none;">
+      <span id="chunks-processed">0</span> audio segments transcribed
+    </div>
+
+    <div id="result-section" class="result-section" style="display:none;">
+      <h3>Summary</h3>
+      <div id="summary-text" class="summary-text"></div>
+      <p class="email-sent" id="email-status"></p>
+    </div>
+
+    <div id="error-section" class="error-section" style="display:none;">
+      <p id="error-text"></p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
